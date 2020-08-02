@@ -7,6 +7,7 @@ const app = express();
 
 // Importing routes
 const evaluatedRoutes = require('./routes/evaluated');
+const evaluationRoutes = require('./routes/evaluation');
 
 // Settings
 app.set('port', process.env.PORT || 3000);
@@ -24,6 +25,7 @@ app.use(express.urlencoded({extended: true}));
 
 // routes
 app.use('/', evaluatedRoutes);
+app.use('/', evaluationRoutes);
 
 // Starting server
 app.listen(app.get('port'), ()=> {
